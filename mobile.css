@@ -1,0 +1,70 @@
+@media screen and (max-width : 767px){
+    
+    .main{
+        height:65vh !important ; 
+    }
+    .box img{
+        width:170px !important ; 
+        height: 190px !important ; 
+        margin-top: 70px !important;
+    }
+    #navbar a{
+        font-size: 10px !important;
+        margin-left: 6px !important;
+    }
+    .box h1{
+        font-size: 25px !important;
+    }
+    .box h2{
+        font-size: 15px !important;
+    }
+    
+    .card-container{
+        display: flex ; 
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw !important;
+    }
+    .card{ 
+        border-radius: 10% !important;
+        height:300px !important; 
+        width:80% !important; 
+        margin-bottom: 15px !important ; 
+    }
+    .c-item{
+        height:100% ; 
+        width:100vw ;
+    }
+    .main-b{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .school-info{
+        width: 95vw !important ; 
+        height:80vh !important; 
+        margin: 20px !important;
+    }
+    .school-info-box{ 
+        padding-top: 40px !important; 
+        padding-left: 20px !important; 
+    }
+    .notice-board{
+        width: 95vw !important ; 
+        height: 70vh !important;
+    }
+    .download-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .download-section-button{
+        width :80% !important ; 
+        margin-bottom: 20px !important;
+    }
+    .download-section{
+        margin-bottom: 150px !important;
+    }
+
+}

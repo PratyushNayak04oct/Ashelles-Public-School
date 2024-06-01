@@ -1,0 +1,68 @@
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .main{
+        height: 60vh !important; 
+    }
+    .box{
+        height: 100% !important;
+    }
+    .box img{
+        height:225px !important ; 
+        width: 225px !important ; 
+        margin-top: 150px !important;
+    }
+    .box h1{
+        font-size: 38px !important;
+    }
+    .box h2{
+        font-size: 28px !important;
+    }
+    .c-item{
+        height:60vh ; 
+    }
+    .main-b{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .school-info{
+        width: 95vw !important ; 
+        height:80vh !important; 
+        margin: 20px !important;
+    }
+    .school-info-box{ 
+        padding-top: 40px !important; 
+        padding-left: 20px !important; 
+    }
+    .school-info-box h1{
+        font-size: 40px;
+    }
+    .school-info-box p{
+        font-size: 26px;
+    }
+    .notice-board{
+        width: 95vw !important ; 
+        height: 70vh !important;
+    }
+    .notice-board h1{
+        font-size: 46px;
+    }
+    .notice-board dt{
+        font-size: 34px;
+    }
+    .notice-board dd{
+        font-size: 28px;
+    }
+    .download-section{
+        display: flex;
+        flex-direction: column;
+    }
+    .download-section-button{
+        width :80% !important ; 
+        margin-bottom: 20px !important;
+        font-size: 28px;
+    }
+    .download-section{
+        margin-bottom: 150px !important;
+    }
+}
