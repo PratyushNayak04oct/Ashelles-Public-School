@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+*{
+    font-family: "Open Sans", sans-serif;
+}
+#navbar-items > ul > li {
+    position: relative;  
+}
+
+#navbar-items > ul > li::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: center;
+    height: 3px;
+    background-color: #F14A00;
+    transition: transform 0.20s ease-in-out;
+    margin-top: 20px;
+}
+
+#navbar-items > ul > li:hover::after {
+    transform: scaleX(1);
+}
