@@ -3,4 +3,4 @@
 
 ## Description -> Contains the files of the Ashelles Public School Website
 
-### Tech Stack used -> React, Vite,Tailwind CSS, CSS, JavaScript, HTML
+Tech Stack used -> React, Vite,Tailwind CSS, CSS, JavaScript, HTML
