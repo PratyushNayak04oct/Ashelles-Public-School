@@ -24,3 +24,7 @@
 #navbar-items > ul > li:hover::after {
     transform: scaleX(1);
 }
+
+#navbar-items > ul > li:hover{
+    
+}
