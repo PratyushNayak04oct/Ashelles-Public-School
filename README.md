@@ -1,4 +1,4 @@
-# **🏫 School Website - README**
+# **🏫 Ashelles Public School - README**
 
 ## **📌 Project Overview**
 This is a **modern, responsive, and user-friendly website** for **[School Name]**, designed to provide information about academics, administration, admissions, events, and more. The website ensures **aesthetic appeal, smooth user experience, and optimal performance** across all devices.
