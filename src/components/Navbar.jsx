@@ -1,6 +1,7 @@
 import { Link } from 'react-router';
 import logo from '../assets/Logo original.png';
 import books from '../assets/Books.jpg';
+import Rules from '../assets/Rules.svg';
 import faculty from '../assets/Faculty.jpeg';
 import { useState, useRef, useEffect } from 'react';
 import '../App.css';
@@ -10,11 +11,10 @@ function Navbar() {
   const dropdownRef = useRef(null);
   const navItemRef = useRef(null);
   
-  // Add a delay before closing the dropdown
   const [closeTimeout, setCloseTimeout] = useState(null);
   
   const handleMouseEnter = (dropdown) => {
-    // Clear any existing timeout to prevent the dropdown from closing
+  
     if (closeTimeout) {
       clearTimeout(closeTimeout);
       setCloseTimeout(null);
@@ -23,15 +23,14 @@ function Navbar() {
   };
 
   const handleMouseLeave = () => {
-    // Set a timeout to delay the closing of the dropdown
+  
     const timeout = setTimeout(() => {
       setDropdownActive(null);
-    }, 300); // 300ms delay before closing
+    }, 300); 
     
     setCloseTimeout(timeout);
   };
   
-  // Clean up timeout on unmount
   useEffect(() => {
     return () => {
       if (closeTimeout) {
@@ -76,29 +75,60 @@ function Navbar() {
           </ul>
         </div>
       </div>
-      
+
+      {/* Dropdown of Academics */}
+
       {dropdownActive === 'academics' && (
         <div 
-          className="h-[48vh] w-[100vw] bg-[#FCF7FF] absolute shadow-2xl z-10 px-[40px] flex items-center text-[#000B58] font-[700]"
+          className="h-[48vh] w-[100vw] bg-[#FCF7FF] absolute shadow-2xl z-10 px-[40px] flex items-center text-[#000B58] font-[700] text-[14px]"
           ref={dropdownRef}
           onMouseEnter={() => handleMouseEnter('academics')} 
           onMouseLeave={handleMouseLeave}
         >
           <div className="flex flex-row gap-[4vw]">
             <div>
-              <img src={books} alt="" className="h-[200px] w-[300px] rounded-[15px] shadow-lg mb-[16px]" />
-              <p>Subjects and Departments</p>
-              <p className = "text-[12px]">At Ashelles Public School we strictly follow the subjects set by CBSE.</p>
+              <Link to = "/academics"><img src= {Rules} alt="" /></Link>
+              <Link to = "/academics">Rules and Regulations</Link>
             </div>
             <div>
-              <img src={faculty} alt="" className="h-[200px] w-[300px] rounded-[15px] shadow-lg mb-[16px]" />
-              <p>Faculty and Staffs</p>
+              <Link to = "/academics"><img src={faculty} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]" /></Link>
+              <Link to = "/academics"><p>Curriculum and Syllabus</p></Link>
             </div>
             <div>
-              <ul className="flex flex-col gap-[24px]">
-                <li>Curriculum Overview</li>
-                <li>Examinations and Assessments</li>
-                <li>Syllabus</li>
+              <ul className="flex flex-col gap-[12px]">
+                <Link to = "/academics"><li>Teaching Methodology</li></Link>
+                <Link to = "/academics"><li>Examinations and Assessments</li></Link>
+                <Link to = "/academics"><li>Academic Calendar and Holiday List</li></Link>
+                <Link to = "/academics"><li>School Timings and Uniforms</li></Link>
+              </ul>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* DropDown of Administration */}
+
+      {dropdownActive === 'administration' && (
+        <div 
+          className="h-[48vh] w-[100vw] bg-[#FCF7FF] absolute shadow-2xl z-10 px-[40px] flex items-center text-[#000B58] font-[700] text-[14px]"
+          ref={dropdownRef}
+          onMouseEnter={() => handleMouseEnter('academics')} 
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="flex flex-row gap-[4vw]">
+            <div>
+              <Link to = "/academics"><img src={books} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg mb-[16px] cursor-pointer" /></Link>
+              <Link to = "/academics">Subjects and Departments</Link>
+            </div>
+            <div>
+              <Link to = "/academics"><img src={faculty} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]" /></Link>
+              <Link to = "/academics"><p>Faculty and Staffs</p></Link>
+            </div>
+            <div>
+              <ul className="flex flex-col gap-[12px]">
+                <Link to = "/academics"><li>Curriculum Overview</li></Link>
+                <Link to = "/academics"><li>Examinations and Assessments</li></Link>
+                <Link to = "/academics"><li>Syllabus</li></Link>
               </ul>
             </div>
           </div>
