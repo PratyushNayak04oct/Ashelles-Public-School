@@ -1,8 +1,10 @@
 import { Link } from 'react-router';
 import logo from '../assets/Logo original.png';
-import books from '../assets/Books.jpg';
 import Rules from '../assets/Rules.svg';
-import faculty from '../assets/Faculty.jpeg';
+import Curriculum from '../assets/CurriculumAndSyllabus.svg';
+import Principal from '../assets/Principal.jpg';
+import Subjects from '../assets/Subjects.svg';
+import Faculty from '../assets/Faculty.svg';
 import { useState, useRef, useEffect } from 'react';
 import '../App.css';
 
@@ -14,7 +16,6 @@ function Navbar() {
   const [closeTimeout, setCloseTimeout] = useState(null);
   
   const handleMouseEnter = (dropdown) => {
-  
     if (closeTimeout) {
       clearTimeout(closeTimeout);
       setCloseTimeout(null);
@@ -23,7 +24,6 @@ function Navbar() {
   };
 
   const handleMouseLeave = () => {
-  
     const timeout = setTimeout(() => {
       setDropdownActive(null);
     }, 300); 
@@ -55,6 +55,7 @@ function Navbar() {
             <li>
               <Link 
                 to="/academics" 
+                
                 onMouseEnter={() => handleMouseEnter('academics')} 
                 onMouseLeave={handleMouseLeave}
               >
@@ -64,14 +65,15 @@ function Navbar() {
             <li>
               <Link 
                 to="/administration" 
+                
                 onMouseEnter={() => handleMouseEnter('administration')} 
                 onMouseLeave={handleMouseLeave}
               >
                 Administration
               </Link>
             </li>
-            <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/contact" >Contact Us</Link></li>
+            <li><Link to="/about" >About Us</Link></li>
           </ul>
         </div>
       </div>
@@ -79,27 +81,26 @@ function Navbar() {
       {/* Dropdown of Academics */}
 
       {dropdownActive === 'academics' && (
-        <div 
-          className="h-[48vh] w-[100vw] bg-[#FCF7FF] absolute shadow-2xl z-10 px-[40px] flex items-center text-[#000B58] font-[700] text-[14px]"
-          ref={dropdownRef}
-          onMouseEnter={() => handleMouseEnter('academics')} 
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="flex flex-row gap-[4vw]">
-            <div>
-              <Link to = "/academics"><img src= {Rules} alt="" /></Link>
-              <Link to = "/academics">Rules and Regulations</Link>
+        <div className="h-[48vh] w-[100vw] bg-[#FCF7FF] absolute shadow-2xl z-10 px-[40px] flex items-center text-[#000B58] font-[700] text-[14px]" ref={dropdownRef} onMouseEnter={() => handleMouseEnter('academics')} onMouseLeave={handleMouseLeave} >
+          <div className="flex flex-row gap-[4vw]" id="academic-drp">
+            <div className="link-group">
+              <Link to="/academics" className="image-link">
+                <img src={Rules} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]"/>
+              </Link>
+              <Link to="/academics" className="text-link">Rules and Regulations</Link>
+            </div>
+            <div className="link-group">
+              <Link to="/academics" className="image-link">
+                <img src={Curriculum} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]" />
+              </Link>
+              <Link to="/academics" className="text-link"><p>Curriculum and Syllabus</p></Link>
             </div>
             <div>
-              <Link to = "/academics"><img src={faculty} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]" /></Link>
-              <Link to = "/academics"><p>Curriculum and Syllabus</p></Link>
-            </div>
-            <div>
-              <ul className="flex flex-col gap-[12px]">
-                <Link to = "/academics"><li>Teaching Methodology</li></Link>
-                <Link to = "/academics"><li>Examinations and Assessments</li></Link>
-                <Link to = "/academics"><li>Academic Calendar and Holiday List</li></Link>
-                <Link to = "/academics"><li>School Timings and Uniforms</li></Link>
+              <ul className="flex flex-col gap-[16px]">
+                <Link to="/academics" className="animated-link"><li>Teaching Methodology</li></Link>
+                <Link to="/academics" className="animated-link"><li>Examinations and Assessments</li></Link>
+                <Link to="/academics" className="animated-link"><li>Academic Calendar and Holiday List</li></Link>
+                <Link to="/academics" className="animated-link"><li>School Timings and Uniforms</li></Link>
               </ul>
             </div>
           </div>
@@ -109,27 +110,27 @@ function Navbar() {
       {/* DropDown of Administration */}
 
       {dropdownActive === 'administration' && (
-        <div 
-          className="h-[48vh] w-[100vw] bg-[#FCF7FF] absolute shadow-2xl z-10 px-[40px] flex items-center text-[#000B58] font-[700] text-[14px]"
-          ref={dropdownRef}
-          onMouseEnter={() => handleMouseEnter('academics')} 
-          onMouseLeave={handleMouseLeave}
-        >
-          <div className="flex flex-row gap-[4vw]">
-            <div>
-              <Link to = "/academics"><img src={books} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg mb-[16px] cursor-pointer" /></Link>
-              <Link to = "/academics">Subjects and Departments</Link>
+        <div className="h-[48vh] w-[100vw] bg-[#FCF7FF] absolute shadow-2xl z-10 px-[40px] flex items-center text-[#000B58] font-[700] text-[14px]" ref={dropdownRef} onMouseEnter={() => handleMouseEnter('administration')} onMouseLeave={handleMouseLeave} >
+          <div className="flex flex-row gap-[4vw]" id="admin-drp">
+            <div className="link-group">
+              <Link to="/academics" className="image-link">
+                <img src={Principal} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]" />
+              </Link>
+              <Link to="/academics" className="text-link"><p>Principal's Message</p></Link>
             </div>
-            <div>
-              <Link to = "/academics"><img src={faculty} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]" /></Link>
-              <Link to = "/academics"><p>Faculty and Staffs</p></Link>
+
+            <div className="link-group">
+              <Link to="/academics" className="image-link">
+                <img src={Subjects} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg mb-[16px] cursor-pointer" />
+              </Link>
+              <Link to="/academics" className="text-link">Subjects and Departments</Link>
             </div>
-            <div>
-              <ul className="flex flex-col gap-[12px]">
-                <Link to = "/academics"><li>Curriculum Overview</li></Link>
-                <Link to = "/academics"><li>Examinations and Assessments</li></Link>
-                <Link to = "/academics"><li>Syllabus</li></Link>
-              </ul>
+
+            <div className="link-group">
+              <Link to="/academics" className="image-link">
+                <img src={Faculty} alt="" className="h-[200px] w-[300px] rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px]" />
+              </Link>
+              <Link to="/academics" className="text-link"><p>Faculty and Staffs</p></Link>
             </div>
           </div>
         </div>

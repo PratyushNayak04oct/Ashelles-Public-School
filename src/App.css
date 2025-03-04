@@ -25,6 +25,52 @@
     transform: scaleX(1);
 }
 
-#navbar-items > ul > li:hover{
-    
-}
+.animated-link {
+    position: relative;
+    text-decoration: none;
+  }
+  
+  .animated-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #F14A00;
+    transition: width 0.3s ease;
+  }
+  
+  .animated-link:hover::after {
+    width: 50%;
+  }
+  
+  .link-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .text-link {
+    display: inline-block;
+    position: relative;
+  }
+  
+  .text-link::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #F14A00;
+    transition: width 0.3s ease;
+  }
+  
+  .text-link:hover::after,
+  .link-group:hover .text-link::after {
+    width: 50%;
+  }
+
+  .image-link {
+    display: block;
+  }
