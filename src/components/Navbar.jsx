@@ -39,23 +39,39 @@ function Navbar() {
     };
   }, [closeTimeout]);
 
+
+  const navbarStyle = dropdownActive 
+    ? "flex flex-row items-center h-[10vh] w-[100vw] px-[3vw] bg-[#FCF7FF] justify-between transition-colors duration-300"
+    : "flex flex-row items-center h-[10vh] w-[100vw] px-[3vw] bg-[#000000a2] justify-between transition-colors duration-300";
+
+  const navItemsStyle = dropdownActive
+    ? "text-[#000B58] transition-colors duration-300"
+    : "text-[#FCF7FF] transition-colors duration-300";
+
+  const schoolNameStyle = dropdownActive
+    ? "text-[20px] font-[700] text-[#F14A00] transition-colors duration-300"
+    : "text-[20px] font-[700] text-[#FCF7FF] transition-colors duration-300";
+
+  const nameStyle = dropdownActive
+    ? "text-[24px] font-extrabold text-[#000B58] transition-colors duration-300"
+    : "text-[24px] font-extrabold text-[#FCF7FF] transition-colors duration-300";
+
   return (
     <>
-      <div id="navbar" className="flex flex-row items-center h-[10vh] w-[100vw] px-[3vw] bg-[#000000a2] justify-between">
+      <div id="navbar" className={navbarStyle}>
         <Link to='/' className="flex flex-row">
           <img src={logo} alt="" srcSet="" className="h-[8vh] flex mt-auto mb-auto" />
-          <div className="flex text-[#FCF7FF] ml-[1vw] items-center">
-            <h1 className="text-[24px] font-extrabold">Ashelles <span className="text-[20px] font-[500]">Public School</span></h1>
+          <div className="flex ml-[1vw] items-center">
+            <h1 id="name" className={nameStyle}>Ashelles <span id="school" className={schoolNameStyle}>Public School</span></h1>
           </div>
         </Link>
 
-        <div className="text-[#FCF7FF]" id="navbar-items" ref={navItemRef}>
+        <div id="navbar-items" className={navItemsStyle} ref={navItemRef}>
           <ul className="flex flex-row list-none gap-[20px] font-[600] text-[16px]">
             <li><Link to="/">Home</Link></li>
             <li>
               <Link 
                 to="/academics" 
-                
                 onMouseEnter={() => handleMouseEnter('academics')} 
                 onMouseLeave={handleMouseLeave}
               >
@@ -65,7 +81,6 @@ function Navbar() {
             <li>
               <Link 
                 to="/administration" 
-                
                 onMouseEnter={() => handleMouseEnter('administration')} 
                 onMouseLeave={handleMouseLeave}
               >
