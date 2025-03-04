@@ -17,7 +17,7 @@
     transform-origin: center;
     height: 3px;
     background-color: #F14A00;
-    transition: transform 0.20s ease-in-out;
+    transition: transform 0.3s ease-in-out;
     margin-top: 20px;
 }
 
