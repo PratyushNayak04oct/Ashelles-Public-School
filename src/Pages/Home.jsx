@@ -32,6 +32,7 @@ function Home() {
             autoPlay
             muted
             loop
+            loading = "lazy"
             className="absolute top-0 left-0 h-full w-full object-cover"
           >
             <source src={Video} type="video/mp4" />
@@ -232,7 +233,7 @@ function Home() {
             <div className="relative overflow-hidden rounded-lg group cursor-pointer">
               <img src={TalentedTeachers} alt="Journey Image 6" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"/>
 
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a588e]">
+              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a58b5]">
                 <div className = "h-[100%] w-[100%] flex justify-center items-center">
                     <a href="/gallery" className="text-white font-extrabold text-xl hover:underline">Go to the Gallery</a>
                 </div>
@@ -271,9 +272,31 @@ function Home() {
             <img src={Plane2} alt="" className="h-[120px] w-auto" />
           </div>
         </div>
-        <div className = "mt-8 mb-8">
-            <h1 className = "text-center text-[#000B58] font-extrabold text-[32px]">Quick Downloads</h1>
-            <div className = ""></div>
+        <div className = "mt-8 mb-8" id = "download-section">
+            <h1 className = "text-center text-[#000B58] font-extrabold text-[32px] mb-4">Quick Downloads</h1>
+            <div className = "flex flex-col px-8 gap-8 items-center">
+                <div className = "flex flex-row justify-between h-[50px] w-[70%]">
+                    <h1 className = "text-[22px] font-[700]">Admission Brochure</h1>
+                    <div className = "flex flex-row justify-around">
+                        <button className = "bg-[#F14A00]">View</button>
+                        <button className = "bg-[#000B58]">Download</button>
+                    </div>
+                </div>
+                <div className = "flex flex-row justify-between h-[50px] w-[70%]">
+                    <h1 className = "text-[22px] font-[700]">Holiday List</h1>
+                    <div className = "flex flex-row justify-around">
+                        <button className = "bg-[#F14A00]">View</button>
+                        <button className = "bg-[#000B58]">Download</button>
+                    </div>
+                </div>
+                <div className = "flex flex-row justify-between h-[50px] w-[70%]">
+                    <h1 className = "text-[22px] font-[700]">Academic Calendar</h1>
+                    <div className = "flex flex-row justify-around">
+                        <button className = "bg-[#F14A00]">View</button>
+                        <button className = "bg-[#000B58]">Download</button>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
     </>

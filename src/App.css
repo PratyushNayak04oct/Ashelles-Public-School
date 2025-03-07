@@ -191,3 +191,12 @@
     color: white;
     font-family: "Patrick Hand", cursive !important;
   }
+
+  #download-section button{
+      padding: 5px 20px ; 
+      margin: 0px 20px ; 
+      border-radius: 8px;
+      font-weight: 700;
+      color: #FCF7FF;
+      cursor: pointer ; 
+  }
