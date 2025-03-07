@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import "tailwindcss";
-
 
 
 *{
@@ -185,3 +185,9 @@
     color: white ; 
   }
   
+
+  /* ------------------------ HOME --------------- */
+  #notice-board{
+    color: white;
+    font-family: "Patrick Hand", cursive !important;
+  }

@@ -72,29 +72,56 @@ function Home(){
                 </div>
             </div>
 
-            <div className="w-full h-[70vh] mb-[70vh]">
+            <div className="w-full h-[70vh]">
                 <img src={Star1} alt="" className="h-[120px] w-auto"/>
                 <div className = "px-8 text-center">
-                    <h1 className = "text-[#000B58] font-extrabold text-[32px] mb-16">Our Impact</h1>
-                    <div className = "flex flex-row gap-40 justify-center">
+                    <h1 className = "text-[#F14A00] font-extrabold text-[32px] mb-8">Our Impact</h1>
+
+                    <div className = "flex flex-row gap-20 justify-center text-[#000B58] mb-8" id ="impact">
                         <div className = "flex flex-col gap-4 justify-center items-center text-center">
                             <img src= {Impact1} alt="" className = "h-[100px] w-auto "/>
+                            <h1 className = "text-center font-[700] text-[20px]">92%</h1>
+                            <p className = "text-center text-[14px] font-[700]">High School Graduation Rate</p>
                         </div>
                         <div className = "flex flex-col gap-4 justify-center items-center text-center">
                             <img src= {Impact2} alt="" className = "h-[100px] w-auto "/>
+                            <h1 className = "text-center font-[700] text-[20px]">95%</h1>
+                            <p className = "text-center text-[14px] font-[700]">Student Satisfaction</p>
                         </div>
                         <div className = "flex flex-col gap-4 justify-center items-center text-center">
                             <img src= {Impact3} alt="" className = "h-[100px] w-auto "/>
+                            <h1 className = "text-center font-[700] text-[20px]">90%</h1>
+                            <p className = "text-center text-[14px] font-[700]">College & Career Readiness</p>
                         </div>
                         <div className = "flex flex-col gap-4 justify-center items-center text-center">
                             <img src= {Impact4} alt="" className = "h-[100px] w-auto "/>
+                            <h1 className = "text-center font-[700] text-[20px]">85%</h1>
+                            <p className = "text-center text-[14px] font-[700]">Participation in Extracurricular</p>
                         </div>
                     </div>
                 </div>
-                <div className="relative w-full flex justify-end">
+                <div className="relative w-full flex justify-end mb-16">
                     <img src={Star2} alt="" className="h-[120px] w-auto mr-0"/>
                 </div>
             </div>
+
+            <div className = "mt-20 w-screen px-8 flex justify-center mb-20" id = "notice-board">
+                <div className = "w-[70vw] h-[60vh] bg-[#118B50] border-8 border-[#854836] rounded-[16px] px-12 py-4">
+                    <h1 className = "text-center text-[28px] font-bold">Notice Board</h1>
+                    <ol className = "list-decimal text-[20px] flex flex-col gap-1">
+                        <li className = "font-[700]">Admissions Open for 2025</li>
+                        <p className = "text-[16px]">Admissions for the new academic session are now open! Apply before 16th March, 2025 to secure a place for your child.</p>
+
+                        <li className = "font-[700]">Annual Sports Day – [Date]</li>
+                        <p className = "text-[16px]">Get ready for an action-packed day of sports and teamwork! Join us on [Date] at [Venue] for our Annual Sports Day. Parents and guardians are welcome to cheer for the students.</p>
+
+                        <li className = "font-[700]">Parent-Teacher Meeting – [Date]</li>
+                        <p className = "text-[16px]">A Parent-Teacher Meeting is scheduled for [Date] from [Time]. We encourage all parents to attend and discuss their child’s progress with teachers</p>
+                    </ol>
+                </div>
+            </div>
+            
+            <div className = "bg-[#E8D5B5] w-screen h-[70vh] mt-16 mb-16"></div>
         </div>
         </>
     )
