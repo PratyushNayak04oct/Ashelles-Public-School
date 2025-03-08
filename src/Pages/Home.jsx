@@ -17,10 +17,10 @@ import Impact1 from "../assets/our-impact-1.svg";
 import Impact2 from "../assets/our-impact-2.svg";
 import Impact3 from "../assets/our-impact-3.svg";
 import Impact4 from "../assets/our-impact-4.svg";
-import Image1 from "../assets/image1.jpeg" ; 
-import Image2 from "../assets/image2.jpeg" ; 
-import Image3 from "../assets/image3.jpeg" ; 
-import Image4 from "../assets/image4.jpeg" ; 
+import Image1 from "../assets/image1.jpg" ; 
+import Image2 from "../assets/image2.jpg" ; 
+import Image3 from "../assets/image3.jpg" ; 
+import Image4 from "../assets/image4.jpg" ; 
 import "../App.css";
 
 function Home() {
