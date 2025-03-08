@@ -48,7 +48,7 @@ function Home() {
                 <h1 className="text-[#FFB22C] font-extrabold text-[64px] leading-tight">
                   Ready to start your
                 </h1>
-                <h1 className="font-extrabold italic text-[72px] leading-tight">
+                <h1 className="font-extrabold italic text-[80px] leading-tight text-white">
                   Adventure ?
                 </h1>
               </div>
@@ -209,30 +209,30 @@ function Home() {
 
           <div className="flex flex-row mb-8 justify-center gap-12">
             <div className="overflow-hidden rounded-lg cursor-pointer">
-              <img src={Principal} alt="Image 1" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
+              <img src={Principal} alt="Image 1" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
 
             <div className="overflow-hidden rounded-lg cursor-pointer">
-              <img src={Image1} alt="Image 2" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
+              <img src={Image1} alt="Image 2" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
 
             <div className="overflow-hidden rounded-lg cursor-pointer">
-              <img src={Image2} alt="Journey Image 3" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
+              <img src={Image2} alt="Journey Image 3" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
           </div>
 
           <div className="flex flex-row justify-center gap-12">
             <div className="overflow-hidden rounded-lg cursor-pointer">
-              <img src={Image3} alt="Journey Image 4" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
+              <img src={Image3} alt="Journey Image 4" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
 
             <div className="overflow-hidden rounded-lg cursor-pointer">
-              <img src={Image4} alt="Journey Image 5" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+              <img src={Image4} alt="Journey Image 5" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"
               />
             </div>
 
             <div className="relative overflow-hidden rounded-lg group cursor-pointer">
-              <img src={TalentedTeachers} alt="Journey Image 6" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"/>
+              <img src={TalentedTeachers} alt="Journey Image 6" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" loading = "lazy"/>
 
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a58b5]">
                 <div className = "h-[100%] w-[100%] flex justify-center items-center">
