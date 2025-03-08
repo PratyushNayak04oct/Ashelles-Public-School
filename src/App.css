@@ -200,3 +200,37 @@
       color: #FCF7FF;
       cursor: pointer ; 
   }
+
+  /* ----------------------- FOOTER ------------------ */
+
+  #footer{ 
+    background-image: url("src/assets/school.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  #footer #cover{
+    background-color: rgba(0, 0, 0, 0.77);
+  }
+  #heading::after {
+    content: "";
+    display: block;
+    width: 90%;
+    height: 4px;
+    background-color: #FFB22C;
+    position: absolute;
+    bottom: -4px;
+    right: 0;
+    text-align: right;
+  }
+  #footer-content > div > h1::after{
+    content: '';
+    display: block;
+    width: 25%;
+    height: 3px;
+    background-color: #FFB22C;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+  }

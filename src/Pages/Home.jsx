@@ -21,6 +21,7 @@ import Image1 from "../assets/image1.jpg" ;
 import Image2 from "../assets/image2.jpg" ; 
 import Image3 from "../assets/image3.jpg" ; 
 import Image4 from "../assets/image4.jpg" ; 
+import Footer from "../components/Footer.jsx";
 import "../App.css";
 
 function Home() {
@@ -108,7 +109,7 @@ function Home() {
           <h1 className="font-extrabold text-[32px] text-[#000B58] mb-4">
             Warm Welcome from our School Executive Leadership Team
           </h1>
-          <div className="px-4 flex items-center justify-center gap-20">
+          <div className="px-4 flex items-center justify-center gap-32">
             <RotatingCard
               title="Our Principal"
               name="Dr. Amar Jyoti Nayak SR."
@@ -272,7 +273,7 @@ function Home() {
             <img src={Plane2} alt="" className="h-[120px] w-auto" />
           </div>
         </div>
-        <div className = "mt-8 mb-8" id = "download-section">
+        <div className = "mt-8 mb-20" id = "download-section">
             <h1 className = "text-center text-[#000B58] font-extrabold text-[32px] mb-4">Quick Downloads</h1>
             <div className = "flex flex-col px-8 gap-8 items-center">
                 <div className = "flex flex-row justify-between h-[50px] w-[70%]">
@@ -298,6 +299,7 @@ function Home() {
                 </div>
             </div>
         </div>
+        <Footer />
       </div>
     </>
   );
