@@ -234,3 +234,145 @@
     bottom: -8px;
     left: 0;
   }
+
+  /* ---------------- Loading Screen --------- */
+
+ /* LoadingScreen.css */
+
+#loader {
+  position: relative;
+  width: 220px;
+  height: 220px;
+}
+
+/* Blinking text animation */
+.blinking-text {
+  animation: blink 0.5s infinite alternate;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Circular path containers */
+.circular-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Path 1 - Innermost orange loader (anticlockwise) */
+.path-1 {
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+  animation: rotate-anticlockwise-1 2.5s linear infinite;
+}
+
+/* Path 2 - Second blue loader (clockwise) */
+.path-2 {
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  animation: rotate-clockwise-2 3.5s linear infinite;
+}
+
+/* Path 3 - Third blue loader (clockwise) */
+.path-3 {
+  width: 160px;
+  height: 160px;
+  transform: translate(-50%, -50%);
+  animation: rotate-clockwise-3 4.5s linear infinite;
+}
+
+/* Path 4 - Outermost orange loader (anticlockwise) */
+.path-4 {
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+  animation: rotate-anticlockwise-4 5.5s linear infinite;
+}
+
+/* Rotating spinner elements */
+.loader-spinner {
+  position: absolute;
+  height: 5px;
+  border-radius: 10px;
+}
+
+/* Orange spinners - counter-clockwise */
+.orange-spinner {
+  background-color: #F14A00;
+  width: 30%;
+  top: 0;
+  left: 35%;
+  transform-origin: center;
+  /* Make it a semicircle */
+  height: 50%;
+  clip-path: ellipse(50% 50% at 50% 0%);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/* Blue spinners - clockwise */
+.blue-spinner {
+  background-color: #000B58;
+  width: 30%;
+  top: 0;
+  left: 35%;
+  transform-origin: center;
+  /* Make it a semicircle */
+  height: 50%;
+  clip-path: ellipse(50% 50% at 50% 0%);
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+/* Different animation times for each loader */
+@keyframes rotate-anticlockwise-1 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+
+@keyframes rotate-clockwise-2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-clockwise-3 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes rotate-anticlockwise-4 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}

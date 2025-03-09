@@ -5,6 +5,7 @@ import Academics from './Pages/Academics.jsx' ;
 import Administration from './Pages/Administration.jsx' ;
 import Contact from './Pages/Contact.jsx' ;
 import About from './Pages/About.jsx' ; 
+import LoadingScreen from './components/LoadingScreen.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -14,6 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Route path = '/administration' element = {<Administration/>}></Route>
       <Route path = '/contact' element = {<Contact/>}></Route>
       <Route path = '/about' element = {<About/>}></Route>
+      <Route path = '/loading' element = {<LoadingScreen />}></Route>
     </Routes>
   </BrowserRouter>
 )
