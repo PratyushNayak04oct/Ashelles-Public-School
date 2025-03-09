@@ -105,11 +105,11 @@ function Home() {
           </div>
         </div>
 
-        <div className="w-screen h-[70vh] bg-[#E8D5B5] mt-16 mb-16 text-center px-8 py-8">
-          <h1 className="font-extrabold text-[32px] text-[#000B58] mb-4">
+        <div className="w-screen bg-[#E8D5B5] mt-16 mb-16 text-center px-8 py-8">
+          <h1 className="font-bold text-[32px] text-[#000B58] mb-8">
             Warm Welcome from our School Executive Leadership Team
           </h1>
-          <div className="px-4 flex items-center justify-center gap-32">
+          <div className="px-4 flex items-center justify-center gap-32 mb-8">
             <RotatingCard
               title="Our Principal"
               name="Dr. Amar Jyoti Nayak SR."
@@ -178,7 +178,7 @@ function Home() {
           className="mt-20 w-screen px-8 flex justify-center mb-20"
           id="notice-board"
         >
-          <div className="w-[70vw] h-[60vh] bg-[#118B50] border-8 border-[#854836] rounded-[16px] px-12 py-4">
+          <div className="w-[70vw] h-[60vh] bg-[#118B50] border-8 border-[#FFB22C] rounded-[16px] px-12 py-4">
             <h1 className="text-center text-[28px] font-bold">Notice Board</h1>
             <ol className="list-decimal text-[20px] flex flex-col gap-1">
               <li className="font-[700]">Admissions Open for 2025</li>
@@ -205,7 +205,7 @@ function Home() {
         </div>
 
         <div className="bg-[#E8D5B5] w-screen py-16 px-8 mt-16 mb-16 flex flex-col">
-          <h1 className="text-[#000B58] font-extrabold text-[32px] text-center mb-8">Our Journey in Pictures</h1>
+          <h1 className="text-[#000B58] font-bold text-[32px] text-center mb-8">Our Journey in Pictures</h1>
 
           <div className="flex flex-row mb-8 justify-center gap-12">
             <div className="overflow-hidden rounded-lg cursor-pointer">
@@ -236,7 +236,7 @@ function Home() {
 
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a58b5]">
                 <div className = "h-[100%] w-[100%] flex justify-center items-center">
-                    <a href="/gallery" className="text-white font-extrabold text-xl hover:underline">Go to the Gallery</a>
+                    <a href="/gallery" className="text-white font-[700]">Walk through our memory lane</a>
                 </div>
               </div>  
             </div>
@@ -251,19 +251,19 @@ function Home() {
 
                 <div className = "h-[400px] w-[360px] flex flex-col justify-center content-center text-center gap-8 hover:rounded-xl hover:shadow-2xl px-2 py-2">
                     <h1 className = "font-extrabold text-[18px] text-[#0069e7]">"As an alumnus, I can proudly say that Ashelles Public School shaped my journey. The guidance, mentorship, and quality education I received here laid a strong foundation for my career. Forever grateful to my teachers!"</h1>
-                    <h2 className = "font-[700] text-[#F14A00]">Arjun Verma</h2>
+                    <h2 className = "font-[700] text-[#F14A00]">- Master Arjun Verma</h2>
                     <p className = "font-[600] text-[#000B58]">Alumni (Batch of 2021)</p>
                 </div>
 
                 <div className = "h-[400px] w-[360px] flex flex-col justify-center content-center text-center gap-8 hover:rounded-xl hover:shadow-2xl px-2 py-2">
                     <h1 className = "font-extrabold text-[18px] text-[#0069e7]">"Choosing Ashelles Public School for my child was the best decision. The dedicated teachers and nurturing environment have helped my child grow academically and personally. I truly appreciate the school's commitment to excellence."</h1>
-                    <h2 className = "font-[700] text-[#F14A00]">Mrs. Ananya Sharma</h2>
+                    <h2 className = "font-[700] text-[#F14A00]"> - Mrs. Ananya Sharma</h2>
                     <p className = "font-[600] text-[#000B58]">Parent of Grade 8 Student</p>
                 </div>
 
                 <div className = "h-[400px] w-[360px] flex flex-col justify-center content-center text-center gap-8 hover:rounded-xl hover:shadow-2xl px-2 py-2">
                     <h1 className = "font-extrabold text-[18px] text-[#0069e7]">"The school's focus on both academics and extracurricular activities ensures a well-rounded education. My child loves learning here, and I have seen remarkable growth in confidence and skills."</h1>
-                    <h2 className = "font-[700] text-[#F14A00]">Mr. Rajiv Mehta</h2>
+                    <h2 className = "font-[700] text-[#F14A00]"> - Mr. Rajiv Mehta</h2>
                     <p className = "font-[600] text-[#000B58]">Parent of Grade 10 Student</p>
                 </div>
                 
