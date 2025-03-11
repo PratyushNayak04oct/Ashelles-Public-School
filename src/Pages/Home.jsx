@@ -175,7 +175,7 @@ function Home() {
         </div>
 
         <div
-          className="mt-20 w-screen px-8 flex justify-center mb-20"
+          className="mt-20 w-screen px-8 flex justify-center mb-20 py-12"
           id="notice-board"
         >
           <div className="w-[70vw] h-[60vh] bg-[#118B50] border-8 border-[#FFB22C] rounded-[16px] px-12 py-4">
@@ -208,33 +208,33 @@ function Home() {
           <h1 className="text-[#000B58] font-bold text-[32px] text-center mb-8">Our Journey in Pictures</h1>
 
           <div className="flex flex-row mb-8 justify-center gap-12">
-            <div className="overflow-hidden rounded-lg cursor-pointer">
+            <div className="overflow-hidden rounded-3xl cursor-pointer">
               <img src={Principal} alt="Image 1" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
 
-            <div className="overflow-hidden rounded-lg cursor-pointer">
+            <div className="overflow-hidden rounded-3xl cursor-pointer">
               <img src={Image1} alt="Image 2" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
 
-            <div className="overflow-hidden rounded-lg cursor-pointer">
+            <div className="overflow-hidden rounded-3xl cursor-pointer">
               <img src={Image2} alt="Journey Image 3" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
           </div>
 
           <div className="flex flex-row justify-center gap-12">
-            <div className="overflow-hidden rounded-lg cursor-pointer">
+            <div className="overflow-hidden rounded-3xl cursor-pointer">
               <img src={Image3} alt="Journey Image 4" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
             </div>
 
-            <div className="overflow-hidden rounded-lg cursor-pointer">
+            <div className="overflow-hidden rounded-3xl cursor-pointer">
               <img src={Image4} alt="Journey Image 5" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"
               />
             </div>
 
-            <div className="relative overflow-hidden rounded-lg group cursor-pointer">
+            <div className="relative overflow-hidden rounded-3xl group cursor-pointer">
               <img src={TalentedTeachers} alt="Journey Image 6" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" loading = "lazy"/>
 
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a58b5]">
+              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a58b5] rounded-3xl">
                 <div className = "h-[100%] w-[100%] flex justify-center items-center">
                     <a href="/gallery" className="text-white font-[700]">Walk through our memory lane</a>
                 </div>
