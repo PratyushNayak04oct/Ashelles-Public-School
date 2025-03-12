@@ -43,7 +43,7 @@ function Home() {
             <div className="fixed top-0 z-50">
               <Navbar />
             </div>
-            <div className="flex-grow flex items-center justify-center">
+            <div className="flex-grow flex items-center justify-center bg-[rgba(0,0,0,0.64)]">
               <div className="text-center">
                 <h1 className="text-[#FFB22C] font-extrabold text-[64px] leading-tight">
                   Ready to start your
