@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 @import "tailwindcss";
 
 
@@ -200,6 +201,13 @@
       font-weight: 700;
       color: #FCF7FF;
       cursor: pointer ; 
+  }
+
+  #hero-heading{
+    color: rgb(0,0,0);
+    font-family: "Shrikhand", serif;
+    -webkit-text-stroke: 1px #FFB22C;
+    font-weight: 900;
   }
 
   /* ----------------------- FOOTER ------------------ */

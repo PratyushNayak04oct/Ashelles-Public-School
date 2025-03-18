@@ -43,17 +43,18 @@ function Home() {
             <div className="fixed top-0 z-50">
               <Navbar />
             </div>
-            <div className="flex-grow flex items-center justify-center bg-[rgba(0,0,0,0.64)]">
-              <div className="text-center">
-                <h1 className="text-[#FFB22C] font-extrabold text-[64px] leading-tight">
-                  Ready to start your
-                </h1>
-                <h1 className="font-extrabold italic text-[80px] leading-tight text-white">
-                  Adventure ?
-                </h1>
+            <div className="flex-grow flex justify-center bg-[rgba(0,0,0,0.75)] flex-col text-white pl-[40px]">
+              <h1 className = "font-bold text-[36px]">Welcome to</h1>
+              <h1 className = "font-extrabold text-[80px]" id = "hero-heading">ASHELLES PUBLIC SCHOOL</h1>
+              <p className = "text-[20px] w-[80%] font-[700]">Nurturing Young Minds with Knowledge, Values, and Excellence for a Brighter Tomorrow.</p>
+              <p className = "text-[20px] w-[80%] font-[700]">Where curiosity meets opportunity, and every child’s potential is unlocked.</p>
+              <div className = "flex flex-row gap-8 mt-12">
+                <button className = "bg-[#F14A00] px-8 font-bold py-4 rounded-[4px] cursor-pointer">Join Us</button>
+                <button className = "bg-blue-500 px-8 font-bold py-4 rounded-[4px] cursor-pointer">About Us</button>
               </div>
             </div>
           </div>
+
         </div>
 
         <div className="w-full px-2 mt-[20px] relative">

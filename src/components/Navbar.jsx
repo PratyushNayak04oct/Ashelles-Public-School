@@ -56,6 +56,15 @@ function Navbar() {
     ? "text-[24px] font-extrabold text-[#000B58] transition-colors duration-300"
     : "text-[24px] font-extrabold text-[#FCF7FF] transition-colors duration-300";
 
+  // Chevron rotation styles based on dropdown state
+  const academicsChevronStyle = dropdownActive === 'academics'
+    ? "inline-block ml-1 transition-transform duration-300 transform rotate-180"
+    : "inline-block ml-1 transition-transform duration-300 transform";
+    
+  const administrationChevronStyle = dropdownActive === 'administration'
+    ? "inline-block ml-1 transition-transform duration-300 transform rotate-180"
+    : "inline-block ml-1 transition-transform duration-300 transform";
+
   return (
     <>
       <div id="navbar" className={navbarStyle}>
@@ -74,8 +83,23 @@ function Navbar() {
                 to="/academics" 
                 onMouseEnter={() => handleMouseEnter('academics')} 
                 onMouseLeave={handleMouseLeave}
+                className="flex items-center"
               >
                 Academics
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className={academicsChevronStyle}
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
               </Link>
             </li>
             <li>
@@ -83,8 +107,23 @@ function Navbar() {
                 to="/administration" 
                 onMouseEnter={() => handleMouseEnter('administration')} 
                 onMouseLeave={handleMouseLeave}
+                className="flex items-center"
               >
                 Administration
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className={administrationChevronStyle}
+                  width="16" 
+                  height="16" 
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  strokeWidth="2" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
               </Link>
             </li>
             <li><Link to="/about" >About Us</Link></li>
