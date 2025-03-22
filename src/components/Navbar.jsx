@@ -2,7 +2,7 @@ import { Link } from 'react-router';
 import logo from '../assets/Logo original.png';
 import Rules from '../assets/Rules.svg';
 import Curriculum from '../assets/CurriculumAndSyllabus.svg';
-import Principal from '../assets/Principal.jpg';
+import Principal from '../assets/Principal.webp';
 import Subjects from '../assets/Subjects.svg';
 import Faculty from '../assets/Faculty.svg';
 import { useState, useRef, useEffect } from 'react';

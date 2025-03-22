@@ -5,22 +5,21 @@ import Plane1 from "../assets/plane-1.svg";
 import Plane2 from "../assets/plane-2.svg";
 import { BookOpen, Globe, TrendingUp } from "lucide-react";
 import Card from "../components/Card.jsx";
-import AcademicBg from "../assets/strongAcademics.jpg";
-import TalentedTeachers from "../assets/talented-teachers.jpg";
-import HighQualityEducation from "../assets/high-quality-education.jpg";
-import RotatingCard from "../components/RotatingCard.jsx";
-import Principal from "../assets/Principal.jpg";
-import Director from "../assets/Director.jpg";
+import AcademicBg from "../assets/strongAcademics.webp";
+import TalentedTeachers from "../assets/talented-teachers.webp";
+import HighQualityEducation from "../assets/high-quality-education.webp";
+import Principal from "../assets/Principal.webp";
+import Director from "../assets/Director.webp";
 import Star1 from "../assets/star-1.svg";
 import Star2 from "../assets/star-2.svg";
 import Impact1 from "../assets/our-impact-1.svg";
 import Impact2 from "../assets/our-impact-2.svg";
 import Impact3 from "../assets/our-impact-3.svg";
 import Impact4 from "../assets/our-impact-4.svg";
-import Image1 from "../assets/image1.jpg" ; 
-import Image2 from "../assets/image2.jpg" ; 
-import Image3 from "../assets/image3.jpg" ; 
-import Image4 from "../assets/image4.jpg" ; 
+import Image1 from "../assets/image1.webp" ; 
+import Image2 from "../assets/image2.webp" ; 
+import Image3 from "../assets/image3.webp" ; 
+import Image4 from "../assets/image4.webp" ; 
 import Footer from "../components/Footer.jsx";
 import "../App.css";
 
@@ -48,10 +47,6 @@ function Home() {
               <h1 className = "font-extrabold text-[80px]" id = "hero-heading">ASHELLES PUBLIC SCHOOL</h1>
               <p className = "text-[20px] w-[80%] font-[700]">Nurturing Young Minds with Knowledge, Values, and Excellence for a Brighter Tomorrow.</p>
               <p className = "text-[20px] w-[80%] font-[700]">Where curiosity meets opportunity, and every child’s potential is unlocked.</p>
-              <div className = "flex flex-row gap-8 mt-12">
-                <button className = "bg-[#F14A00] px-8 font-bold py-4 rounded-[4px] cursor-pointer">Join Us</button>
-                <button className = "bg-blue-500 px-8 font-bold py-4 rounded-[4px] cursor-pointer">About Us</button>
-              </div>
             </div>
           </div>
 
@@ -106,26 +101,30 @@ function Home() {
           </div>
         </div>
 
-        <div className="w-screen bg-[#E8D5B5] mt-16 mb-16 text-center px-8 py-8">
+        <div className="w-screen mt-16 mb-16 text-center px-20 py-8">
           <h1 className="font-bold text-[32px] text-[#000B58] mb-8">
             Warm Welcome from our School Executive Leadership Team
           </h1>
-          <div className="px-4 flex items-center justify-center gap-32 mb-8">
-            <RotatingCard
-              title="Our Principal"
-              name="Dr. Amar Jyoti Nayak SR."
-              image={Principal}
-              heading="From Principal's Desk"
-              message={`${"Welcome to Ashelles Public School, where learning, growth, and excellence come together. We are dedicated to nurturing young minds and shaping bright futures. Let's embark on this journey of knowledge together!"}`}
-            />
+          <div className = "flex flex-col gap-12">
 
-            <RotatingCard
-              title="Our Director"
-              name="Mrs. Meghna Mishra"
-              image={Director}
-              heading="From Director's Desk"
-              message={`${"At Ashelles Public School, we are committed to providing a nurturing environment where students thrive academically and personally. With a vision for excellence, we strive to shape future leaders through quality education and strong values."}`}
-            />
+              <div className = "flex flex-row w-[90%] gap-8">
+                <img src={Principal} alt="" className = "w-[40%] rounded-tl-4xl rounded-br-4xl" />
+                <div className = "flex flex-col gap-4 text-left">
+                  <h1 className = "text-[20px] font-[600] text-blue-700">Our Principal</h1>
+                  <h1 className = "text-[28px] font-extrabold text-[#F14A00]">Mr. Nayak</h1>
+                  <p className = "text-[16px] font-[700] text-[#000B58]">"Welcome to Ashelles Public School, where learning, growth, and excellence come together. We are dedicated to nurturing young minds and shaping bright futures. Let's embark on this journey of knowledge together!"</p>
+                </div>
+              </div>
+
+              <div className = "flex flex-row w-[90%] gap-8">
+                <img src={Director} alt="" className = "w-[40%] rounded-tl-4xl rounded-br-4xl" />
+                <div className = "flex flex-col gap-4 text-left">
+                  <h1 className = "text-[20px] font-[600] text-blue-700">Our Director</h1>
+                  <h1 className = "text-[28px] font-extrabold text-[#F14A00]">Mr. Nayak</h1>
+                  <p className = "text-[16px] font-[700] text-[#000B58]">"At Ashelles Public School, we are committed to providing a nurturing environment where students thrive academically and personally. With a vision for excellence, we strive to shape future leaders through quality education and strong values."</p>
+                </div>
+              </div>
+
           </div>
         </div>
 
@@ -142,29 +141,29 @@ function Home() {
             >
               <div className="flex flex-col gap-4 justify-center items-center text-center">
                 <img src={Impact1} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-[700] text-[20px]">92%</h1>
-                <p className="text-center text-[14px] font-[700]">
+                <h1 className="text-center font-[700] text-[24px]">92%</h1>
+                <p className="text-center text-[20px] font-[700]">
                   High School Graduation Rate
                 </p>
               </div>
               <div className="flex flex-col gap-4 justify-center items-center text-center">
                 <img src={Impact2} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-[700] text-[20px]">95%</h1>
-                <p className="text-center text-[14px] font-[700]">
+                <h1 className="text-center font-[700] text-[24px]">95%</h1>
+                <p className="text-center text-[20px] font-[700]">
                   Student Satisfaction
                 </p>
               </div>
               <div className="flex flex-col gap-4 justify-center items-center text-center">
                 <img src={Impact3} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-[700] text-[20px]">90%</h1>
-                <p className="text-center text-[14px] font-[700]">
+                <h1 className="text-center font-[700] text-[24px]">90%</h1>
+                <p className="text-center text-[20px] font-[700]">
                   College & Career Readiness
                 </p>
               </div>
               <div className="flex flex-col gap-4 justify-center items-center text-center">
                 <img src={Impact4} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-[700] text-[20px]">85%</h1>
-                <p className="text-center text-[14px] font-[700]">
+                <h1 className="text-center font-bold text-[24px]">85%</h1>
+                <p className="text-center text-[20px] font-[700]">
                   Participation in Extracurricular
                 </p>
               </div>
@@ -210,30 +209,29 @@ function Home() {
 
           <div className="flex flex-row mb-8 justify-center gap-12">
             <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Principal} alt="Image 1" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
+              <img src={Principal} alt="Image 1" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
             </div>
 
             <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image1} alt="Image 2" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
+              <img src={Image1} alt="Image 2" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
             </div>
 
             <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image2} alt="Journey Image 3" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
+              <img src={Image2} alt="Journey Image 3" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
             </div>
           </div>
 
           <div className="flex flex-row justify-center gap-12">
             <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image3} alt="Journey Image 4" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"/>
+              <img src={Image3} alt="Journey Image 4" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
             </div>
 
             <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image4} alt="Journey Image 5" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110" loading = "lazy"
-              />
+              <img src={Image4} alt="Journey Image 5" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
             </div>
 
             <div className="relative overflow-hidden rounded-3xl group cursor-pointer">
-              <img src={TalentedTeachers} alt="Journey Image 6" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" loading = "lazy"/>
+              <img src={TalentedTeachers} alt="Journey Image 6" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"/>
 
               <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a58b5] rounded-3xl">
                 <div className = "h-[100%] w-[100%] flex justify-center items-center">
