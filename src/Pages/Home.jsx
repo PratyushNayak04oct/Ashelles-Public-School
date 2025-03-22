@@ -1,307 +1,327 @@
-import React from "react";
-import Navbar from "../components/Navbar";
-import Video from "../assets/Video.mp4";
-import Plane1 from "../assets/plane-1.svg";
-import Plane2 from "../assets/plane-2.svg";
-import { BookOpen, Globe, TrendingUp } from "lucide-react";
-import Card from "../components/Card.jsx";
-import AcademicBg from "../assets/strongAcademics.webp";
-import TalentedTeachers from "../assets/talented-teachers.webp";
-import HighQualityEducation from "../assets/high-quality-education.webp";
-import Principal from "../assets/Principal.webp";
-import Director from "../assets/Director.webp";
-import Star1 from "../assets/star-1.svg";
-import Star2 from "../assets/star-2.svg";
-import Impact1 from "../assets/our-impact-1.svg";
-import Impact2 from "../assets/our-impact-2.svg";
-import Impact3 from "../assets/our-impact-3.svg";
-import Impact4 from "../assets/our-impact-4.svg";
-import Image1 from "../assets/image1.webp" ; 
-import Image2 from "../assets/image2.webp" ; 
-import Image3 from "../assets/image3.webp" ; 
-import Image4 from "../assets/image4.webp" ; 
-import Footer from "../components/Footer.jsx";
-import "../App.css";
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, ArrowLeft, BookOpen, Users, Trophy, Calendar, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import Navbar from '../components/Navbar.jsx' ; 
+import AnimatedSection from '../components/AnimatedSection';
+import ImageModal from '../components/ImageModal';
+import CountUpNumber from '../components/CountUpNumber';
+import VideoSection from '../components/VideoSection';
+import Footer from '../components/Footer.jsx' ; 
 
-function Home() {
+const heroSlides = [
+  {
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+    heading: 'Welcome to Ashelles Public School',
+    text: 'Shaping Young Minds for a Brighter Future',
+    gradient: 'from-black/30 to-black/30'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+    heading: 'Excellence in Education',
+    text: 'Nurturing Talent, Fostering Growth',
+    gradient: 'from-black/30 to-black/30'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80',
+    heading: 'State-of-the-Art Facilities',
+    text: 'Creating the Perfect Learning Environment',
+    gradient: 'from-black/30 to-black/30'
+  }
+];
+
+const galleryImages = [
+  'https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+  'https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+  'https://images.unsplash.com/photo-1546519638-68e109498ffc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80',
+  'https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80'
+];
+
+const testimonials = [
+  {
+    name: 'Sarah Johnson',
+    role: 'Parent',
+    text: 'The dedication of teachers at Ashelles is remarkable. My child has grown tremendously both academically and personally.',
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    name: 'Michael Chen',
+    role: 'Alumni',
+    text: 'The years I spent at Ashelles shaped my future. The school\'s focus on holistic development gave me a strong foundation.',
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80'
+  },
+  {
+    name: 'Emily Rodriguez',
+    role: 'Parent',
+    text: 'The school\'s commitment to excellence and personal attention to each student makes it truly special.',
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=150&q=80'
+  }
+];
+
+const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
+
   return (
-    <>
-      <div className="overflow-hidden w-full">
-        <div id="body" className="relative h-screen w-full overflow-hidden">
-          <video
-            autoPlay
-            muted
-            loop
-            loading = "lazy"
-            className="absolute top-0 left-0 h-full w-full object-cover"
+    <div className="min-h-screen">
+      <div className="fixed top-0 z-50">
+          <Navbar />
+      </div>
+
+      {/* Hero Section */}
+      <div className="relative h-screen overflow-hidden">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.7 }}
+            className="absolute inset-0"
           >
-            <source src={Video} type="video/mp4" />
-            Your Browser does not support the video.
-          </video>
-          <div className="absolute top-0 left-0 h-full w-full z-10 flex flex-col">
-            <div className="fixed top-0 z-50">
-              <Navbar />
-            </div>
-            <div className="flex-grow flex justify-center bg-[rgba(0,0,0,0.75)] flex-col text-white pl-[40px]">
-              <h1 className = "font-bold text-[36px]">Welcome to</h1>
-              <h1 className = "font-extrabold text-[80px]" id = "hero-heading">ASHELLES PUBLIC SCHOOL</h1>
-              <p className = "text-[20px] w-[80%] font-[700]">Nurturing Young Minds with Knowledge, Values, and Excellence for a Brighter Tomorrow.</p>
-              <p className = "text-[20px] w-[80%] font-[700]">Where curiosity meets opportunity, and every child’s potential is unlocked.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <div className="w-full px-2 mt-[20px] relative">
-          <div className="w-full relative">
-            <div className="relative">
-              <img src={Plane1} alt="" className="h-[120px] w-auto" />
-              <div className="flex w-[80%] mx-auto flex-col text-center">
-                <h1 className="text-[#F14A00] font-extrabold text-[28px]">
-                  "Nurturing Minds, Building Futures – Where Excellence Meets
-                  Trust."
-                </h1>
-                <p className="px-20 text-[20px] font-[800] text-[#000B58] mt-8">
-                  In Ashelles Public School, we provide students with strong
-                  academics, holistic and inclusive support, and rich life
-                  opportunities beyond the classroom so they thrive in
-                  kindergarten through 12th grade … and far beyond!
-                </p>
-              </div>
-              <div className="relative w-full flex justify-end">
-                <img src={Plane2} alt="" className="h-[120px] w-auto" />
-              </div>
-              <div
-                className="flex flex-row justify-center gap-[44px] mt-16 mb-16"
-                id="card-container"
-              >
-                <Card
-                  icon={BookOpen}
-                  heading="Strong Academics"
-                  description="We provide a well-structured and dynamic curriculum designed to foster intellectual growth, critical thinking, and lifelong learning"
-                  bgImage={AcademicBg}
-                  solidColor="#344CB7"
-                />
-                <Card
-                  icon={Globe}
-                  heading="Talented Teachers"
-                  description="Our dedicated and experienced educators inspire, mentor, and shape young minds with passion and expertise."
-                  bgImage={TalentedTeachers}
-                  solidColor="#FAA300"
-                />
-                <Card
-                  icon={TrendingUp}
-                  heading="High Quality Education"
-                  description="We ensure excellence in education through innovative teaching methods, modern resources, and a commitment to academic success."
-                  bgImage={HighQualityEducation}
-                  solidColor="#A31D1D"
-                />
+            <div 
+              className="absolute inset-0 bg-cover bg-center"
+              style={{ backgroundImage: `url(${heroSlides[currentSlide].image})` }}
+            />
+            <div className={`absolute inset-0 bg-gradient-to-r ${heroSlides[currentSlide].gradient}`} />
+            
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-[#FCF7FF] max-w-4xl mx-auto px-4">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
+                  className="bg-gradient-to-r from-blue-600/10 to-purple-600/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+                >
+                  <motion.h1
+                    className="text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-200 to-purple-200"
+                  >
+                    {heroSlides[currentSlide].heading}
+                  </motion.h1>
+                  <motion.p
+                    className="text-3xl mb-8 text-[#FCF7FF]/90"
+                  >
+                    {heroSlides[currentSlide].text}
+                  </motion.p>
+                  <motion.div
+                    className="flex justify-center gap-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.4 }}
+                  >
+                    <Link 
+                      to="/academics" 
+                      className="px-8 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-lg font-semibold hover:from-blue-600 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                    >
+                      Explore Academics
+                    </Link>
+                    <Link 
+                      to="/about" 
+                      className="px-8 py-3 bg-white/10 backdrop-blur-sm rounded-full text-lg font-semibold hover:bg-white/20 transition-all duration-300 border border-white/30"
+                    >
+                      Learn More
+                    </Link>
+                  </motion.div>
+                </motion.div>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="w-screen mt-16 mb-16 text-center px-20 py-8">
-          <h1 className="font-bold text-[32px] text-[#000B58] mb-8">
-            Warm Welcome from our School Executive Leadership Team
-          </h1>
-          <div className = "flex flex-col gap-12">
-
-              <div className = "flex flex-row w-[90%] gap-8">
-                <img src={Principal} alt="" className = "w-[40%] rounded-tl-4xl rounded-br-4xl" />
-                <div className = "flex flex-col gap-4 text-left">
-                  <h1 className = "text-[20px] font-[600] text-blue-700">Our Principal</h1>
-                  <h1 className = "text-[28px] font-extrabold text-[#F14A00]">Mr. Nayak</h1>
-                  <p className = "text-[16px] font-[700] text-[#000B58]">"Welcome to Ashelles Public School, where learning, growth, and excellence come together. We are dedicated to nurturing young minds and shaping bright futures. Let's embark on this journey of knowledge together!"</p>
-                </div>
-              </div>
-
-              <div className = "flex flex-row w-[90%] gap-8">
-                <img src={Director} alt="" className = "w-[40%] rounded-tl-4xl rounded-br-4xl" />
-                <div className = "flex flex-col gap-4 text-left">
-                  <h1 className = "text-[20px] font-[600] text-blue-700">Our Director</h1>
-                  <h1 className = "text-[28px] font-extrabold text-[#F14A00]">Mr. Nayak</h1>
-                  <p className = "text-[16px] font-[700] text-[#000B58]">"At Ashelles Public School, we are committed to providing a nurturing environment where students thrive academically and personally. With a vision for excellence, we strive to shape future leaders through quality education and strong values."</p>
-                </div>
-              </div>
-
-          </div>
-        </div>
-
-        <div className="w-full h-[70vh]">
-          <img src={Star1} alt="" className="h-[120px] w-auto" />
-          <div className="px-8 text-center">
-            <h1 className="text-[#F14A00] font-extrabold text-[32px] mb-8">
-              Our Impact
-            </h1>
-
-            <div
-              className="flex flex-row gap-20 justify-center text-[#000B58] mb-8"
-              id="impact"
-            >
-              <div className="flex flex-col gap-4 justify-center items-center text-center">
-                <img src={Impact1} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-[700] text-[24px]">92%</h1>
-                <p className="text-center text-[20px] font-[700]">
-                  High School Graduation Rate
-                </p>
-              </div>
-              <div className="flex flex-col gap-4 justify-center items-center text-center">
-                <img src={Impact2} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-[700] text-[24px]">95%</h1>
-                <p className="text-center text-[20px] font-[700]">
-                  Student Satisfaction
-                </p>
-              </div>
-              <div className="flex flex-col gap-4 justify-center items-center text-center">
-                <img src={Impact3} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-[700] text-[24px]">90%</h1>
-                <p className="text-center text-[20px] font-[700]">
-                  College & Career Readiness
-                </p>
-              </div>
-              <div className="flex flex-col gap-4 justify-center items-center text-center">
-                <img src={Impact4} alt="" className="h-[100px] w-auto " />
-                <h1 className="text-center font-bold text-[24px]">85%</h1>
-                <p className="text-center text-[20px] font-[700]">
-                  Participation in Extracurricular
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="relative w-full flex justify-end mb-16">
-            <img src={Star2} alt="" className="h-[120px] w-auto mr-0" />
-          </div>
-        </div>
-
-        <div
-          className="mt-20 w-screen px-8 flex justify-center mb-20 py-12"
-          id="notice-board"
+          </motion.div>
+        </AnimatePresence>
+        
+        <button
+          onClick={prevSlide}
+          className="absolute left-8 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 group"
         >
-          <div className="w-[70vw] h-[60vh] bg-[#118B50] border-8 border-[#FFB22C] rounded-[16px] px-12 py-4">
-            <h1 className="text-center text-[28px] font-bold">Notice Board</h1>
-            <ol className="list-decimal text-[20px] flex flex-col gap-1">
-              <li className="font-[700]">Admissions Open for 2025</li>
-              <p className="text-[16px]">
-                Admissions for the new academic session are now open! Apply
-                before 16th March, 2025 to secure a place for your child.
+          <ArrowLeft size={24} className="text-[#FCF7FF] group-hover:scale-110 transition-transform" />
+        </button>
+        <button
+          onClick={nextSlide}
+          className="absolute right-8 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-sm p-4 rounded-full hover:bg-white/20 transition-all duration-300 border border-white/30 group"
+        >
+          <ArrowRight size={24} className="text-[#FCF7FF] group-hover:scale-110 transition-transform" />
+        </button>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-3">
+          {heroSlides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentSlide === index 
+                  ? 'bg-white scale-125' 
+                  : 'bg-white/50 hover:bg-white/70'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Introduction Section */}
+      <AnimatedSection className="py-20 bg-gradient-to-b from-[#FCF7FF] to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Our Legacy of Excellence</h2>
+            <div className="max-w-3xl mx-auto text-lg text-gray-600">
+              <p className="mb-6">
+                Founded in 1998, Ashelles Public School has been at the forefront of educational 
+                innovation for over two decades. Our institution stands as a beacon of academic 
+                excellence, combining traditional values with modern teaching methodologies.
               </p>
-
-              <li className="font-[700]">Annual Sports Day – [Date]</li>
-              <p className="text-[16px]">
-                Get ready for an action-packed day of sports and teamwork! Join
-                us on [Date] at [Venue] for our Annual Sports Day. Parents and
-                guardians are welcome to cheer for the students.
+              <p>
+                We believe in nurturing not just academic excellence, but developing well-rounded 
+                individuals ready to take on the world's challenges. Our comprehensive approach 
+                to education ensures that every student discovers their unique potential and 
+                excels in their chosen path.
               </p>
-
-              <li className="font-[700]">Parent-Teacher Meeting – [Date]</li>
-              <p className="text-[16px]">
-                A Parent-Teacher Meeting is scheduled for [Date] from [Time]. We
-                encourage all parents to attend and discuss their child's
-                progress with teachers
-              </p>
-            </ol>
-          </div>
-        </div>
-
-        <div className="bg-[#E8D5B5] w-screen py-16 px-8 mt-16 mb-16 flex flex-col">
-          <h1 className="text-[#000B58] font-bold text-[32px] text-center mb-8">Our Journey in Pictures</h1>
-
-          <div className="flex flex-row mb-8 justify-center gap-12">
-            <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Principal} alt="Image 1" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
-            </div>
-
-            <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image1} alt="Image 2" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
-            </div>
-
-            <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image2} alt="Journey Image 3" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
-            </div>
-          </div>
-
-          <div className="flex flex-row justify-center gap-12">
-            <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image3} alt="Journey Image 4" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
-            </div>
-
-            <div className="overflow-hidden rounded-3xl cursor-pointer">
-              <img src={Image4} alt="Journey Image 5" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out hover:scale-110"/>
-            </div>
-
-            <div className="relative overflow-hidden rounded-3xl group cursor-pointer">
-              <img src={TalentedTeachers} alt="Journey Image 6" className="h-[240px] w-[320px] object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"/>
-
-              <div className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 bg-[#000a58b5] rounded-3xl">
-                <div className = "h-[100%] w-[100%] flex justify-center items-center">
-                    <a href="/gallery" className="text-white font-[700]">Walk through our memory lane</a>
-                </div>
-              </div>  
             </div>
           </div>
         </div>
+      </AnimatedSection>
 
-        <div className = "w-full">
-          <img src={Plane1} alt="" className="h-[120px] w-auto" />
-          <div className = "px-8 py-8">
-            <h1 className = "text-[#000B58] font-extrabold text-center text-[32px] mb-4">Voices of Trust</h1>
-            <div className = "flex flex-row gap-12 justify-center">
-
-                <div className = "h-[400px] w-[360px] flex flex-col justify-center content-center text-center gap-8 hover:rounded-xl hover:shadow-2xl px-2 py-2">
-                    <h1 className = "font-extrabold text-[18px] text-[#0069e7]">"As an alumnus, I can proudly say that Ashelles Public School shaped my journey. The guidance, mentorship, and quality education I received here laid a strong foundation for my career. Forever grateful to my teachers!"</h1>
-                    <h2 className = "font-[700] text-[#F14A00]">- Master Arjun Verma</h2>
-                    <p className = "font-[600] text-[#000B58]">Alumni (Batch of 2021)</p>
-                </div>
-
-                <div className = "h-[400px] w-[360px] flex flex-col justify-center content-center text-center gap-8 hover:rounded-xl hover:shadow-2xl px-2 py-2">
-                    <h1 className = "font-extrabold text-[18px] text-[#0069e7]">"Choosing Ashelles Public School for my child was the best decision. The dedicated teachers and nurturing environment have helped my child grow academically and personally. I truly appreciate the school's commitment to excellence."</h1>
-                    <h2 className = "font-[700] text-[#F14A00]"> - Mrs. Ananya Sharma</h2>
-                    <p className = "font-[600] text-[#000B58]">Parent of Grade 8 Student</p>
-                </div>
-
-                <div className = "h-[400px] w-[360px] flex flex-col justify-center content-center text-center gap-8 hover:rounded-xl hover:shadow-2xl px-2 py-2">
-                    <h1 className = "font-extrabold text-[18px] text-[#0069e7]">"The school's focus on both academics and extracurricular activities ensures a well-rounded education. My child loves learning here, and I have seen remarkable growth in confidence and skills."</h1>
-                    <h2 className = "font-[700] text-[#F14A00]"> - Mr. Rajiv Mehta</h2>
-                    <p className = "font-[600] text-[#000B58]">Parent of Grade 10 Student</p>
-                </div>
-                
-            </div>
-          </div>
-          <div className="relative w-full flex justify-end">
-            <img src={Plane2} alt="" className="h-[120px] w-auto" />
+      {/* Stats Section */}
+      <AnimatedSection className="py-20 bg-gradient-to-r from-blue-600 to-purple-600 text-[#FCF7FF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+            <motion.div 
+              whileHover={{ scale: 1.05 }} 
+              transition={{ type: "spring" }}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+            >
+              <BookOpen size={40} className="mx-auto mb-4" />
+              <h3 className="text-4xl font-bold">
+                <CountUpNumber end={25} duration={2} />+
+              </h3>
+              <p>Years of Excellence</p>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }} 
+              transition={{ type: "spring" }}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+            >
+              <Users size={40} className="mx-auto mb-4" />
+              <h3 className="text-4xl font-bold">
+                <CountUpNumber end={2000} duration={2} />+
+              </h3>
+              <p>Students</p>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }} 
+              transition={{ type: "spring" }}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+            >
+              <Trophy size={40} className="mx-auto mb-4" />
+              <h3 className="text-4xl font-bold">
+                <CountUpNumber end={100} duration={2} />+
+              </h3>
+              <p>Awards Won</p>
+            </motion.div>
+            <motion.div 
+              whileHover={{ scale: 1.05 }} 
+              transition={{ type: "spring" }}
+              className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+            >
+              <Calendar size={40} className="mx-auto mb-4" />
+              <h3 className="text-4xl font-bold">
+                <CountUpNumber end={50} duration={2} />+
+              </h3>
+              <p>Annual Events</p>
+            </motion.div>
           </div>
         </div>
-        <div className = "mt-8 mb-20" id = "download-section">
-            <h1 className = "text-center text-[#000B58] font-extrabold text-[32px] mb-4">Quick Downloads</h1>
-            <div className = "flex flex-col px-8 gap-8 items-center">
-                <div className = "flex flex-row justify-between h-[50px] w-[70%]">
-                    <h1 className = "text-[22px] font-[700]">Admission Brochure</h1>
-                    <div className = "flex flex-row justify-around">
-                        <button className = "bg-[#F14A00]">View</button>
-                        <button className = "bg-[#000B58]">Download</button>
-                    </div>
+      </AnimatedSection>
+
+      {/* Voices of Trust Section */}
+      <AnimatedSection className="py-20 bg-gradient-to-b from-blue-50 to-[#FCF7FF]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-5xl font-bold text-center mb-12 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Voices of Trust</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+              >
+                <div className="flex items-center mb-6">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-16 h-16 rounded-full mr-4 border-4 border-blue-100"
+                  />
+                  <div>
+                    <h3 className="text-xl font-semibold text-gray-800">{testimonial.name}</h3>
+                    <p className="text-blue-600">{testimonial.role}</p>
+                  </div>
                 </div>
-                <div className = "flex flex-row justify-between h-[50px] w-[70%]">
-                    <h1 className = "text-[22px] font-[700]">Holiday List</h1>
-                    <div className = "flex flex-row justify-around">
-                        <button className = "bg-[#F14A00]">View</button>
-                        <button className = "bg-[#000B58]">Download</button>
-                    </div>
-                </div>
-                <div className = "flex flex-row justify-between h-[50px] w-[70%]">
-                    <h1 className = "text-[22px] font-[700]">Academic Calendar</h1>
-                    <div className = "flex flex-row justify-around">
-                        <button className = "bg-[#F14A00]">View</button>
-                        <button className = "bg-[#000B58]">Download</button>
-                    </div>
-                </div>
-            </div>
+                <p className="text-gray-600 italic text-lg">"{testimonial.text}"</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
+      </AnimatedSection>
+
+      {/* Gallery Section */}
+      <AnimatedSection className="py-20 bg-gradient-to-b from-[#FCF7FF] to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center mb-12">
+            <h2 className="text-5xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Image Gallery</h2>
+            <Link 
+              to="/gallery" 
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full text-[#FCF7FF] hover:from-blue-600 hover:to-purple-600 transition-all duration-300"
+            >
+              View All <ChevronRight size={20} />
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {galleryImages.map((image, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                className="cursor-pointer overflow-hidden rounded-2xl shadow-xl"
+                onClick={() => setSelectedImage(image)}
+              >
+                <img
+                  src={image}
+                  alt={`Gallery image ${index + 1}`}
+                  className="w-full h-48 object-cover transform hover:scale-110 transition-transform duration-500"
+                />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </AnimatedSection>
+
+      {/* Video Section */}
+      <VideoSection />
+
+      {/* Image Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <ImageModal
+            imageUrl={selectedImage}
+            onClose={() => setSelectedImage(null)}
+          />
+        )}
+      </AnimatePresence>
+      <div className = "mt-20">
         <Footer />
       </div>
-    </>
+    </div>
   );
-}
+};
 
 export default Home;
