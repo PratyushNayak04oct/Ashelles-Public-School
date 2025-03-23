@@ -7,6 +7,15 @@
     font-family: "Open Sans", sans-serif;
 }
 
+@layer utilities {
+  .gradient-stroke {
+    -webkit-text-stroke: 8px transparent;
+    background: linear-gradient(to right, #0763d4, #5435d4);
+    background-clip: text;
+    -webkit-text-fill-color: white;
+  }
+}
+
 /* ---------------------- Navbar ---------------------------------- */
 
 #navbar-items > ul > li {

@@ -2,11 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../App.css';
 import Logo from '../assets/Logo.png' ; 
-import Rules from '../assets/Rules.svg' ; 
-import Curriculum from '../assets/CurriculumAndSyllabus.svg' ; 
-import Principal from '../assets/Principal.webp' ; 
-import Subjects from '../assets/Subjects.svg' ; 
-import Faculty from '../assets/Faculty.svg' ; 
 
 const Navbar = () => {
   const [dropdownActive, setDropdownActive] = useState(null);
@@ -262,7 +257,6 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Dropdown of Academics - Desktop - BELOW NAVBAR */}
       {dropdownActive === 'academics' && !menuOpen && (
         <div 
           className={belowNavbarDropdownStyle} 
@@ -274,7 +268,7 @@ const Navbar = () => {
             <div className="link-group w-full md:w-1/2 lg:w-auto">
               <Link to="/academics" className="image-link">
                 <img 
-                  src={Rules}
+                  src= "https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/Rules.svg"
                   alt="Rules and Regulations"
                   className="h-[200px] w-full rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px] object-cover"
                 />
@@ -284,7 +278,7 @@ const Navbar = () => {
             <div className="link-group w-full md:w-1/2 lg:w-auto">
               <Link to="/academics" className="image-link">
                 <img 
-                  src={Curriculum}
+                  src= "https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/CurriculumAndSyllabus.svg"
                   alt="Curriculum and Syllabus"
                   className="h-[200px] w-full rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px] object-cover"
                 />
@@ -303,7 +297,7 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* DropDown of Administration - Desktop - BELOW NAVBAR */}
+      
       {dropdownActive === 'administration' && !menuOpen && (
         <div 
           className={belowNavbarDropdownStyle} 
@@ -315,7 +309,7 @@ const Navbar = () => {
             <div className="link-group w-full md:w-1/3 lg:w-auto">
               <Link to="/administration" className="image-link">
                 <img 
-                  src={Principal}
+                  src = "https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/Principal.webp"
                   alt="Principal's Message"
                   className="h-[200px] w-full rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px] object-cover"
                 />
@@ -325,7 +319,7 @@ const Navbar = () => {
             <div className="link-group w-full md:w-1/3 lg:w-auto">
               <Link to="/administration" className="image-link">
                 <img 
-                  src={Subjects}
+                  src = "https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/Subjects.svg"
                   alt="Subjects and Departments"
                   className="h-[200px] w-full rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px] object-cover"
                 />
@@ -335,7 +329,7 @@ const Navbar = () => {
             <div className="link-group w-full md:w-1/3 lg:w-auto">
               <Link to="/administration" className="image-link">
                 <img 
-                  src={Faculty}
+                  src = "https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/Faculty.svg"
                   alt="Faculty and Staff"
                   className="h-[200px] w-full rounded-[15px] hover:shadow-lg duration-[300] ease-in-out mb-[16px] object-cover"
                 />
