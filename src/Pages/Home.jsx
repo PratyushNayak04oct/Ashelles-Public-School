@@ -30,6 +30,8 @@ const heroSlides = [
   }
 ];
 
+
+// LeaderShip Section
 const leadershipTeam = [
   {
     name: "Mr. Nayak",
@@ -45,6 +47,8 @@ const leadershipTeam = [
   }
 ];
 
+
+// Gallery Section
 const galleryImages = [
   'https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/image1.webp',
   'https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/image2.webp',
@@ -52,6 +56,8 @@ const galleryImages = [
   'https://raw.githubusercontent.com/PratyushNayak04oct/Ashelles-Public-School/refs/heads/main/src/assets/image4.webp'
 ];
 
+
+// Testimonial Section
 const testimonials = [
   {
     name: 'Sarah Johnson',
@@ -73,6 +79,8 @@ const testimonials = [
   }
 ];
 
+
+// Upcoming Events Section
 const upcomingEvents = [
   {
     title: "Annual Science Exhibition",
@@ -112,6 +120,8 @@ const upcomingEvents = [
   }
 ];
 
+
+//Quick Downloads Section 
 const quickDownloads = [
   {
     title: "Admission Form 2024-25",
@@ -133,10 +143,23 @@ const quickDownloads = [
   }
 ];
 
+
+// Thought of the Day Section
+
+async function getQuote(){
+  let res = await fetch('https://dummyjson.com/quotes/random') ;
+  let data = res.json() ;  
+  return data ; 
+}
+
+let data = getQuote() ; 
 const thoughtOfTheDay = {
-  quote: "Education is not the filling of a pail, but the lighting of a fire.",
-  author: "William Butler Yeats"
+  quote: data.quote,
+  author: data.author
 };
+
+
+// Start of code for the home page
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
