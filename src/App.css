@@ -147,6 +147,20 @@
     left: 0;
   }
 
+  /* For Mobiles */
+  @media only screen and (max-width: 480px) {
+
+    #footer > #cover{
+        padding-inline: none ;
+        padding-block: none;
+    }
+
+    #footer > #cover > #heading{
+        display: flex;
+        flex-direction: column;
+    }
+  }
+
   /* ---------------- Loading Screen --------- */
 
  /* LoadingScreen.css */

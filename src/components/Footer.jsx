@@ -6,13 +6,16 @@ function Footer(){
     return(
         <>
             <div className = "h-[80vh] w-full" id = "footer" >
+
                 <div className = "h-full w-full z-10 flex flex-col px-16 py-8 gap-16 text-white" id = "cover">
+                    
                     <div>
                         <div className = "flex flex-row gap-16 items-center px-36 relative" id="heading">
                             <h1 className = "text-[40px] font-extrabold text-[#FFB22C]">APS</h1>
                             <h2 className = "font-bold text-[24px]">Ashelles Public School</h2>
                         </div>
                     </div>
+
                     <div className = "flex flex-row items-center justify-between" id = "footer-content">
                         <div className = "w-[20%] h-[100%]">
                             <h1 className = "font-bold relative mb-8 flex flex-col">Quick Links</h1>
