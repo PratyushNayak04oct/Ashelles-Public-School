@@ -182,7 +182,7 @@ const Home = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="fixed top-0 z-50">
+      <div className = "fixed top-0 z-50">
           <Navbar />
       </div>
 
